@@ -10,3 +10,6 @@ Author URI: http://aristeides.com
 
 require_once dirname( __FILE__ ) . '/includes/customizer-output.php';   // Some Extra customizer functions
 require_once dirname( __FILE__ ) . '/templates/cart-button.php';        // The Cart button template (for the navbar)
+
+
+wp_enqueue_style('bc_edd_styles', plugins_url('assets/css/styles.css', __FILE__), false, null);
