@@ -14,7 +14,7 @@ require_once dirname( __FILE__ ) . '/includes/customizer.php';   // Some Extra c
 require_once dirname( __FILE__ ) . '/templates/cart-button.php';        // The Cart button template (for the navbar)
 
 // Include the less compiler if not present
-if (!class_exists(lessc)){
+if (!class_exists('lessc')){
   require_once dirname( __FILE__) . '/includes/lessphp/lessc.inc.php';
 }
 
