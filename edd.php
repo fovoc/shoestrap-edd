@@ -10,7 +10,7 @@ Author URI: http://aristeides.com
 
 
 require_once dirname( __FILE__ ) . '/template-functions.php';           // Include template files for the appropriate post types etc.
-require_once dirname( __FILE__ ) . '/includes/customizer-output.php';   // Some Extra customizer functions
+require_once dirname( __FILE__ ) . '/includes/customizer.php';   // Some Extra customizer functions
 require_once dirname( __FILE__ ) . '/templates/cart-button.php';        // The Cart button template (for the navbar)
 
 // Include the less compiler if not present
