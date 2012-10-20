@@ -13,7 +13,7 @@ require_once dirname( __FILE__ ) . '/includes/customizer-output.php';   // Some 
 require_once dirname( __FILE__ ) . '/templates/cart-button.php';        // The Cart button template (for the navbar)
 
 
-function bc_edd_enqueu_resources() {
+function bc_edd_enqueue_resources() {
   wp_enqueue_style('bc_edd_styles', plugins_url('assets/css/styles.css', __FILE__), false, null);
 }
-add_action('wp_enqueue_scripts', 'bc_edd_enqueu_resources', 102);
+add_action('wp_enqueue_scripts', 'bc_edd_enqueue_resources', 102);
