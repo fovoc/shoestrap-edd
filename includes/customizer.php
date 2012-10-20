@@ -59,6 +59,11 @@ function bootstrap_commerce_edd_customizations(){
             *background-color: darken(@endColor, 5%);
           }
         }
+        .edd_purchase_submit_wrapper .edd-submit.button.blue,
+        .edd_purchase_submit_wrapper .edd-submit.button.gray,
+        .edd_purchase_submit_wrapper .edd-submit.button.green,
+        .edd_purchase_submit_wrapper .edd-submit.button.yellow,
+        .edd_purchase_submit_wrapper .edd-submit.button.dark-gray,
         .navbar-inner a.btn-cart{
           .buttonBackground(@btnColor, @btnColorHighlight);
         }
@@ -97,6 +102,11 @@ function bootstrap_commerce_edd_customizations(){
             *background-color: darken(@endColor, 5%);
           }
         }
+        .edd_purchase_submit_wrapper .edd-submit.button.blue,
+        .edd_purchase_submit_wrapper .edd-submit.button.gray,
+        .edd_purchase_submit_wrapper .edd-submit.button.green,
+        .edd_purchase_submit_wrapper .edd-submit.button.yellow,
+        .edd_purchase_submit_wrapper .edd-submit.button.dark-gray,
         .navbar-inner a.btn-cart{
           .buttonBackground(@btnColor, @btnColorHighlight);
         }
