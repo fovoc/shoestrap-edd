@@ -1,7 +1,7 @@
 <?php
   
 function bc_edd_load_single_template() {
-  global $wp_query;
+  global $wp_query, $post;
 
   // Only run on single pages of post type = download
   if ($wp_query->is_single && $wp_query->query_vars['post_type'] == 'download') {
