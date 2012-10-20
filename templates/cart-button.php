@@ -1,0 +1,1 @@
+<a class="btn-cart" href="<?php echo edd_get_checkout_uri(); ?>"><i class="icon-shopping-cart"></i> <?php _e( 'My Cart', 'bootstrap_commerce' ) ?></a>
