@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Bootstrap Commerce Easy Digital Downloads Plugin
+Plugin Name: Bootstrap Commerce Easy Digital Downloads Addon
 Plugin URI: http://bootstrap-commerce.com
 Description: To be used with the Bootstrap Customizer Core theme
 Version: 1.0
@@ -16,7 +16,8 @@ if ( is_plugin_active( 'bc-customizer/bc_customizer.php' ) ) {
   require_once dirname( __FILE__ ) . '/template-functions.php';         // Include template files for the appropriate post types etc.
   require_once dirname( __FILE__ ) . '/includes/customizer.php';        // Some Extra customizer functions
   require_once dirname( __FILE__ ) . '/templates/cart-button.php';      // The Cart button template (for the navbar)
-  
+  require_once dirname( __FILE__ ) . '/includes/updater/licencing.php'; // Licencing to provide automatic updates
+    
   // Include the less compiler if not present
   if (!class_exists('lessc')){
     require_once dirname( __FILE__) . '/includes/lessphp/lessc.inc.php';
