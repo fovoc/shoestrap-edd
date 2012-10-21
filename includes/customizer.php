@@ -2,7 +2,7 @@
 
 function bootstrap_commerce_edd_customizations(){
   $color      = get_theme_mod( 'background_color' );
-  $link_color = get_theme_mod( 'link_text_color' );
+  $link_color = get_theme_mod( 'bc_customizer_link_color' );
   $btn_color  = get_theme_mod( 'bc_customizer_buttons_color' );    
   
   if (strlen($btn_color) <= 2 ){ $btn_color = '#0066cc'; }
@@ -12,10 +12,12 @@ function bootstrap_commerce_edd_customizations(){
   <style>
     .product-list .product .content .product-price,
     body.single-download .product-meta .single-product-price{
-      background: #<?php echo $color; ?>;
-      background: <?php echo $color; ?>;
-      color: #<?php echo $link_color; ?>;
+      <?php if ( !empty($color) ) { ?>
+        background: <?php echo $color; ?>;
+        background: #<?php echo $color; ?>;
+      <?php } ?>
       color: <?php echo $link_color; ?>;
+      color: #<?php echo $link_color; ?>;
     }
     <?php
     $less = new lessc;
