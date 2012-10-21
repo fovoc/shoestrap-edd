@@ -10,7 +10,7 @@ function bc_edd_load_single_template($template) {
   
   // downloads category and tag template
   if ( isset( $wp_query->query_vars['taxonomy'] ) && ( $wp_query->query_vars['taxonomy'] == 'download_category' || $wp_query->query_vars['taxonomy'] == 'download_tag' ) ) {
-    return dirname(__FILE__) . '/templates/edd_list.php';
+    return dirname(__FILE__) . '/templates/downloads-taxonomy.php';
   }
 
   return $template;
