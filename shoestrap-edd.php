@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Shoestrap Easy Digital Downloads Addon
+Plugin Name: Shoestrap EDD Addon
 Plugin URI: http://bootstrap-commerce.com
 Description: This plugin adds the necessary templates and functions to the shoestrap theme
 Version: 1.0
