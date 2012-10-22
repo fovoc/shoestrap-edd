@@ -6,7 +6,7 @@
         <header>
           <?php if ( current_user_can( 'manage_options' ) ){ ?>
             <div class="EditProductEntryButton" style="float: right;">
-              <a class="btn" href="<?php echo admin_url(); ?>post.php?post=<?php the_ID(); ?>&action=edit"><?php _e( 'Edit Product', 'bootstrap_commerce' ) ?></a>
+              <a class="btn" href="<?php echo admin_url(); ?>post.php?post=<?php the_ID(); ?>&action=edit"><?php _e( 'Edit Product', 'shoestrap' ) ?></a>
             </div>
           <?php } ?>
           <h1 itemprop="name" class="mp_product_name" class="entry-title"><?php the_title(); ?></h1>

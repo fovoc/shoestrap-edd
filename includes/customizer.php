@@ -1,10 +1,10 @@
 <?php
 
-function bootstrap_commerce_edd_customizations(){
+function shoestrap_edd_customizations(){
   $color      = get_theme_mod( 'background_color' );
-  $link_color = get_theme_mod( 'bc_customizer_link_color' );
-  $btn_color  = get_theme_mod( 'bc_customizer_buttons_color' );
-  $text_light = get_theme_mod( 'bc_customizer_text_variation' );
+  $link_color = get_theme_mod( 'shoestrap_link_color' );
+  $btn_color  = get_theme_mod( 'shoestrap_buttons_color' );
+  $text_light = get_theme_mod( 'shoestrap_text_variation' );
   
   if (strlen($btn_color) <= 2 ){ $btn_color = '#0066cc'; }
 
@@ -40,7 +40,7 @@ function bootstrap_commerce_edd_customizations(){
     ));
     $less->setFormatter("compressed");
     
-    if (bc_customizer_get_brightness($btn_color) <= 160){
+    if (shoestrap_get_brightness($btn_color) <= 160){
       echo $less->compile("
         @btnColorHighlight: darken(spin(@btnColor, 5%), 10%);
 
@@ -139,4 +139,4 @@ function bootstrap_commerce_edd_customizations(){
     }?>
   </style>
 <?php }
-add_action( 'wp_head', 'bootstrap_commerce_edd_customizations', 200 );
+add_action( 'wp_head', 'shoestrap_edd_customizations', 200 );

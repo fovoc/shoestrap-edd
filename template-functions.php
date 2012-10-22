@@ -1,6 +1,6 @@
 <?php
   
-function bc_edd_load_single_template($template) {
+function shoestrap_load_single_template($template) {
   global $wp_query, $post;
   
   // single download template
@@ -15,4 +15,4 @@ function bc_edd_load_single_template($template) {
 
   return $template;
 }
-add_filter('template_include', 'bc_edd_load_single_template', 1, 1); 
+add_filter('template_include', 'shoestrap_load_single_template', 1, 1); 

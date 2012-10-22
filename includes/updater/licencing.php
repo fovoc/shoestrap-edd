@@ -8,7 +8,7 @@ if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
 }
 
 // retrieve our license key from the DB
-$license_key = trim( get_option( 'bc_edd_license_key' ) );
+$license_key = trim( get_option( 'shoestrap_license_key' ) );
 
 // setup the updater
 $edd_updater = new EDD_SL_Plugin_Updater( EDD_SL_STORE_URL, __FILE__, array( 
@@ -20,20 +20,20 @@ $edd_updater = new EDD_SL_Plugin_Updater( EDD_SL_STORE_URL, __FILE__, array(
 );
 
 
-function bc_edd_license_menu() {
-  add_plugins_page( 'Bootstrap Commerce Easy Digital Downloads Addon License', 'Bootstrap Commerce Easy Digital Downloads Addon License', 'manage_options', 'bc_edd-license', 'bc_edd_license_page' );
+function shoestrap_license_menu() {
+  add_plugins_page( 'Bootstrap Commerce Easy Digital Downloads Addon License', 'Bootstrap Commerce Easy Digital Downloads Addon License', 'manage_options', 'shoestrap-license', 'shoestrap_license_page' );
 }
-add_action('admin_menu', 'bc_edd_license_menu');
+add_action('admin_menu', 'shoestrap_license_menu');
 
-function bc_edd_license_page() {
-  $license  = get_option( 'bc_edd_license_key' );
-  $status   = get_option( 'bc_edd_license_status' );
+function shoestrap_license_page() {
+  $license  = get_option( 'shoestrap_license_key' );
+  $status   = get_option( 'shoestrap_license_status' );
   ?>
   <div class="wrap">
     <h2><?php _e('Bootstrap Commerce Easy Digital Downloads Addon License Options'); ?></h2>
     <form method="post" action="options.php">
     
-      <?php settings_fields('bc_edd_license'); ?>
+      <?php settings_fields('shoestrap_license'); ?>
       
       <table class="form-table">
         <tbody>
@@ -42,8 +42,8 @@ function bc_edd_license_page() {
               <?php _e('License Key'); ?>
             </th>
             <td>
-              <input id="bc_edd_license_key" name="bc_edd_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
-              <label class="description" for="bc_edd_license_key"><?php _e('Enter your license key'); ?></label>
+              <input id="shoestrap_license_key" name="shoestrap_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
+              <label class="description" for="shoestrap_license_key"><?php _e('Enter your license key'); ?></label>
             </td>
           </tr>
           <?php if( false !== $license ) { ?>
@@ -55,7 +55,7 @@ function bc_edd_license_page() {
                 <?php if( $status !== false && $status == 'valid' ) { ?>
                   <span style="color:green;"><?php _e('active'); ?></span>
                 <?php } else {
-                  wp_nonce_field( 'bc_edd_nonce', 'bc_edd_nonce' ); ?>
+                  wp_nonce_field( 'shoestrap_nonce', 'shoestrap_nonce' ); ?>
                   <input type="submit" class="button-secondary" name="edd_license_activate" value="<?php _e('Activate License'); ?>"/>
                 <?php } ?>
               </td>
@@ -69,33 +69,33 @@ function bc_edd_license_page() {
   <?php
 }
 
-function bc_edd_register_option() {
+function shoestrap_register_option() {
   // creates our settings in the options table
-  register_setting('bc_edd_license', 'bc_edd_license_key', 'bc_edd_sanitize_license' );
+  register_setting('shoestrap_license', 'shoestrap_license_key', 'shoestrap_sanitize_license' );
 }
-add_action('admin_init', 'bc_edd_register_option');
+add_action('admin_init', 'shoestrap_register_option');
 
-function bc_edd_sanitize_license( $new ) {
-  $old = get_option( 'bc_edd_license_key' );
+function shoestrap_sanitize_license( $new ) {
+  $old = get_option( 'shoestrap_license_key' );
   if( $old && $old != $new ) {
-    delete_option( 'bc_edd_license_status' ); // new license has been entered, so must reactivate
+    delete_option( 'shoestrap_license_status' ); // new license has been entered, so must reactivate
   }
   return $new;
 }
 
 
 
-function bc_edd_activate_license() {
+function shoestrap_activate_license() {
 
   // listen for our activate button to be clicked
   if( isset( $_POST['edd_license_activate'] ) ) {
 
     // run a quick security check 
-    if( ! check_admin_referer( 'bc_edd_nonce', 'bc_edd_nonce' ) )   
+    if( ! check_admin_referer( 'shoestrap_nonce', 'shoestrap_nonce' ) )   
       return; // get out if we didn't click the Activate button
 
     // retrieve the license from the database
-    $license = trim( get_option( 'bc_edd_license_key' ) );
+    $license = trim( get_option( 'shoestrap_license_key' ) );
       
 
     // data to send in our API request
@@ -117,17 +117,17 @@ function bc_edd_activate_license() {
     
     // $license_data->license will be either "active" or "inactive"
 
-    update_option( 'bc_edd_license_status', $license_data->license );
+    update_option( 'shoestrap_license_status', $license_data->license );
 
   }
 }
-add_action('admin_init', 'bc_edd_activate_license');
+add_action('admin_init', 'shoestrap_activate_license');
 
-function bc_edd_check_license() {
+function shoestrap_check_license() {
 
   global $wp_version;
 
-  $license = trim( get_option( 'bc_edd_license_key' ) );
+  $license = trim( get_option( 'shoestrap_license_key' ) );
     
   $api_params = array( 
     'edd_action' => 'check_license', 
