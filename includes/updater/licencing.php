@@ -1,6 +1,6 @@
 <?php
 
-define( 'EDD_SL_STORE_URL', 'http://bootstrap-commerce.com/downloads' );
+define( 'SS_EDD_STORE_URL', 'http://bootstrap-commerce.com/downloads' );
 define( 'EDD_SL_ITEM_NAME', 'Shoestrap EDD Addon' );
 
 if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
@@ -12,7 +12,7 @@ if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
 $license_key = trim( get_option( 'shoestrap_edd_license_key' ) );
 
 // setup the updater
-$edd_updater = new EDD_SL_Plugin_Updater( EDD_SL_STORE_URL, __FILE__, array( 
+$edd_updater = new EDD_SL_Plugin_Updater( SS_EDD_STORE_URL, __FILE__, array( 
     'version'   => '1.0.1',         // current version number
     'license'   => $license_key,
     'item_name' => EDD_SL_ITEM_NAME,
@@ -105,7 +105,7 @@ function shoestrap_edd__activate_license() {
     );
     
     // Call the custom API.
-    $response = wp_remote_get( add_query_arg( $api_params, EDD_SL_STORE_URL ) );
+    $response = wp_remote_get( add_query_arg( $api_params, SS_EDD_STORE_URL ) );
 
     // make sure the response came back okay
     if ( is_wp_error( $response ) )
@@ -136,7 +136,7 @@ function shoestrap_edd__check_license() {
   );
 
   // Call the custom API.
-  $response = wp_remote_get( add_query_arg( $api_params, EDD_SL_STORE_URL ) );
+  $response = wp_remote_get( add_query_arg( $api_params, SS_EDD_STORE_URL ) );
 
 
   if ( is_wp_error( $response ) )
