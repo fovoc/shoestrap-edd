@@ -11,7 +11,10 @@
         <a href="<?php the_permalink(); ?>">
           <h5 class="product_name"><?php the_title(); ?></h5>
         </a>
-        <p><?php the_excerpt(); ?></p>
+        <?php $show_content = get_theme_mod( 'shoestrap_edd_show_text_in_lists' );
+        if ( $show_content == 'show' ) { ?>
+          <p><?php the_excerpt(); ?></p>
+        <?php } ?>
         
         <?php if(function_exists( 'edd_price' )) { ?>
           <div class="product-price">
