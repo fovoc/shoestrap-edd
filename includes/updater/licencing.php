@@ -13,7 +13,7 @@ $license_key = trim( get_option( 'shoestrap_edd_license_key' ) );
 
 // setup the updater
 $edd_updater = new EDD_SL_Plugin_Updater( EDD_SL_STORE_URL, __FILE__, array( 
-    'version'   => '1.0',         // current version number
+    'version'   => '1.0.1',         // current version number
     'license'   => $license_key,
     'item_name' => EDD_SL_ITEM_NAME,
     'author'    => 'Aristeides Stathopoulos'
