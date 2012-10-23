@@ -12,6 +12,11 @@ function shoestrap_load_single_template($template) {
   if ( isset( $wp_query->query_vars['taxonomy'] ) && ( $wp_query->query_vars['taxonomy'] == 'download_category' || $wp_query->query_vars['taxonomy'] == 'download_tag' ) ) {
     return dirname(__FILE__) . '/templates/downloads-taxonomy.php';
   }
+  
+  $frontpage_mode = get_theme_mod( 'shoestrap_edd_frontpage' );
+  if ( is_front_page() && $frontpage_mode == 'edd_list' ) {
+    return dirname(__FILE__) . '/templates/downloads-all.php';
+  }
 
   return $template;
 }
