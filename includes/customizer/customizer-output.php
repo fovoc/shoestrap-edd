@@ -11,6 +11,10 @@ function shoestrap_edd_customizations(){
   ?>
   
   <style>
+    .product-list .product .content h5.product_name{
+      color: <?php echo $link_color; ?>;
+      color: #<?php echo $link_color; ?>;
+    }
     .product-list .product .content .product-price,
     body.single-download .product-meta .single-product-price{
       <?php if ( !empty($color) ) { ?>
