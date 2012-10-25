@@ -7,8 +7,7 @@ $offset = $current_page > 0 ? $per_page * ($current_page-1) : 0;
 $product_args = array(
   'post_type'       => 'download',
   'posts_per_page'  => $per_page,
-  'meta_key'        => 'edd_price',
-  'orderby'         => 'meta_value',
+  'orderby'         => 'date',
   'order'           => 'DESC',
   'offset'          => $offset
 );
