@@ -9,5 +9,11 @@ function shoestrap_edd_register_settings($wp_customize){
   foreach($settings as $setting){
     $wp_customize->add_setting( $setting['slug'], array( 'default' => $setting['default'], 'type' => 'theme_mod', 'capability' => 'edit_theme_options' ));
   }
+  $wp_customize->add_setting( 'posts_per_page', array(
+    'default'        => 'posts_per_page',
+    'type'           => 'option',
+    'capability'     => 'manage_options',
+) );
+  
 }
 add_action( 'customize_register', 'shoestrap_edd_register_settings' );

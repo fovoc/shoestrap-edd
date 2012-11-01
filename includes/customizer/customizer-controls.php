@@ -29,8 +29,12 @@ function shoestrap_edd_register_controls($wp_customize){
     ),
   ));
   
-
-  if ( $wp_customize->is_preview() && ! is_admin() )
-    add_action( 'wp_footer', 'shoestrap_preview', 21);
+  $wp_customize->add_control( 'posts_per_page', array(
+    'label'       => __( 'Products Per Page', 'shoestrap_edd' ),
+    'section'     => 'shoestrap_edd',
+    'settings'    => 'posts_per_page',
+    'type'        => 'text'
+  ));
+  
 }
 add_action( 'customize_register', 'shoestrap_edd_register_controls' );
