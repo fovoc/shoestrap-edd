@@ -29,6 +29,18 @@ function shoestrap_edd_register_controls($wp_customize){
     ),
   ));
   
+  $wp_customize->add_control( 'shoestrap_edd_show_meta_on_top', array(
+    'label'       => __( 'Show price and button on the top of single products', 'shoestrap_edd' ),
+    'section'     => 'shoestrap_edd',
+    'settings'    => 'shoestrap_edd_show_meta_on_top',
+    'type'        => 'select',
+    'priority'    => 1,
+    'choices'     => array(
+      'no'  => __('No', 'shoestrap_edd'),
+      'yes'   => __('Yes', 'shoestrap_edd'),
+    ),
+  ));
+  
   $wp_customize->add_control( 'posts_per_page', array(
     'label'       => __( 'Products Per Page', 'shoestrap_edd' ),
     'section'     => 'shoestrap_edd',

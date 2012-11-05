@@ -12,15 +12,18 @@
           <h1 itemprop="name" class="mp_product_name" class="entry-title"><?php the_title(); ?></h1>
           
         </header>
-
-        <div class="product-meta content clearfix">
-          <?php if(!edd_has_variable_prices($post->ID)) { ?>
-            <h4 class="single-product-price pull-left"><?php edd_price($post->ID); ?></h4>
-          <?php } ?>
-          <div class="purchase-button pull-right">
-            <?php echo edd_get_purchase_link($post->ID, __('Add to Cart', 'shoestrap_edd'), 'button'); ?>
+        
+        <?php $meta_show = get_theme_mod( 'shoestrap_edd_show_meta_on_top' );
+        if ( $meta_show == 'yes' ) { ?>
+          <div class="product-meta content clearfix">
+            <?php if(!edd_has_variable_prices($post->ID)) { ?>
+              <h4 class="single-product-price pull-left"><?php edd_price($post->ID); ?></h4>
+            <?php } ?>
+            <div class="purchase-button pull-right">
+              <?php echo edd_get_purchase_link($post->ID, __('Add to Cart', 'shoestrap_edd'), 'button'); ?>
+            </div>
           </div>
-        </div>
+        <?php } ?>
         <?php the_content(); ?>
       </article>
     </div>
