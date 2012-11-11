@@ -101,3 +101,11 @@ function shoestrap_edd_activation_error() {
   }
 }
 add_action('admin_notices', 'shoestrap_edd_activation_error');
+
+function shoestrap_edd_phpless() {
+  $less = new lessc;
+  // $less->setFormatter( "compressed" );
+
+  $less->checkedCompile( dirname( __FILE__ ) . '/assets/css/styles.less', dirname( __FILE__ ) . '/assets/css/styles.css' );
+}
+add_action( 'wp', 'shoestrap_edd_phpless' );
