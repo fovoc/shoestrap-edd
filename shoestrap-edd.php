@@ -24,7 +24,7 @@ if ( $shoestrap_enabled->exists() && function_exists( 'edd_get_checkout_uri' ) )
   }
   
   function shoestrap_enqueue_resources() {
-    wp_enqueue_style('shoestrap_styles', plugins_url('assets/css/styles.css', __FILE__), false, null);
+    wp_enqueue_style('shoestrap_styles_edd', plugins_url('assets/css/styles.css', __FILE__), false, null);
   }
   add_action('wp_enqueue_scripts', 'shoestrap_enqueue_resources', 102);
 }
