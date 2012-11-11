@@ -90,8 +90,8 @@ function shoestrap_edd_customizations(){
         .edd_purchase_submit_wrapper .edd-submit.button.yellow,
         .edd_purchase_submit_wrapper .edd-submit.button.dark-gray,
         .edd-add-to-cart.blue, .edd-add-to-cart.gray, .edd-add-to-cart.green, .edd-add-to-cart.yellow, .edd-add-to-cart.dark-gray,
-        
-        .navbar-inner a.btn-cart{
+        .navbar-inner a.btn-cart,
+        .widget_edd_cart_widget ul.edd-cart .edd_checkout a{
           .buttonBackground(@btnColor, @btnColorHighlight);
         }
       ");
@@ -140,7 +140,8 @@ function shoestrap_edd_customizations(){
         .edd_purchase_submit_wrapper .edd-submit.button.yellow,
         .edd_purchase_submit_wrapper .edd-submit.button.dark-gray,
         .edd-add-to-cart.blue, .edd-add-to-cart.gray, .edd-add-to-cart.green, .edd-add-to-cart.yellow, .edd-add-to-cart.dark-gray,
-        .navbar-inner a.btn-cart{
+        .navbar-inner a.btn-cart,
+        .widget_edd_cart_widget ul.edd-cart .edd_checkout a{
           .buttonBackground(@btnColor, @btnColorHighlight);
         }
       ");
