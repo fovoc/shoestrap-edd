@@ -1,0 +1,59 @@
+@import "../bootstrap-less/variables.less";
+@import "../bootstrap-less/mixins.less";
+@import "../bootstrap-less/buttons.less";
+@import "../bootstrap-less/tables.less";
+
+.product-list{
+  .product{background: #fff; margin-bottom: 20px; position: relative; -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2); box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+    &.first{margin-left: 0; clear: left;}
+    &.last{clear: right;}
+    .content{padding: 10px;
+      h5.product_name{color: #333;}
+      .product-price{position: absolute; top: 0; right: -1px; font-weight: bold; font-size: 18px; padding: 10px; ..border-bottom-left-radius(4px);}
+      .product-buttons{margin-top: 10px; text-align: center;}
+    }
+  }
+}
+
+body.single-download{
+  .product-meta{margin: 20px 0;
+    .single-product-price{font-size: 36px;}
+  }
+}
+
+.widget_edd_cart_widget{min-height: 20px; padding: 10px; margin-bottom: 20px; border: 1px solid rgba(150, 150, 150, 0.3); .border-radius(4px); -webkit-box-shadow: 0px 1px 1px px rgba(0, 0, 0, .05); box-shadow: 0px 1px 1px px rgba(0, 0, 0, .05);
+  ul.edd-cart{margin: 0;
+    li{list-style: none; list-style-type: none; clear: both; border-bottom: 1px solid rgba(150, 150, 150, 0.3); padding: 5px 0; margin: 5px 0;
+      &:last-child{border-bottom: 0;}
+    }
+    .edd-cart-item-title{clear: both;}
+    .edd-cart-item-separator{display: none;}
+    .edd-remove-from-cart{float: right; width: 13px; overflow: hidden; text-decoration: none; opacity: 0.7;
+      &:hover{opacity: 1;}
+      &:before{content: "\f057"; font-family: FontAwesome; font-size: 16px;}
+    }
+    .edd_checkout{clear: both;}
+  }
+}
+
+.edd-add-to-cart, .widget_edd_cart_widget ul.edd-cart .edd_checkout a, .edd-submit {.btn;}
+
+table#edd_checkout_cart{.table;
+  .edd_cart_item_image{float: left; margin-right: 10px;}
+  .edd_cart_footer_row{
+    .edd_cart_total{text-align: center; font-weight: normal;
+      .edd_cart_amount{font-weight: bold; font-size: 1.2em;}
+    }
+  }
+}
+
+#edd_checkout_form_wrap{
+  .edd-payment-icons{text-align: center;}
+  #edd_purchase_form{
+    p{border-bottom: 1px solid rgba(150, 150, 150, 0.3);
+      .edd-label{float: left; width: 50%;}
+      &:last-child{border-bottom: 0;}
+    }
+    #eddmc_mailchimp_signup{float: left; margin-right: 5px;}
+  }
+}
