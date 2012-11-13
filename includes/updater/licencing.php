@@ -1,7 +1,7 @@
 <?php
 
 define( 'SHOESTRAP_EDD_STORE_URL', 'http://bootstrap-commerce.com/downloads' );
-define( 'SHOESTRAP_EDD_ITEM_NAME', 'Shoestrap MP Addon' );
+define( 'SHOESTRAP_EDD_ITEM_NAME', 'Shoestrap EDD Addon' );
 
 if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
   // load our custom updater
@@ -20,7 +20,7 @@ $edd_updater = new EDD_SL_Plugin_Updater( SHOESTRAP_EDD_STORE_URL, __FILE__, arr
   )
 );
 
-add_action( 'shoestrap_admin_content', 'shoestrap_edd_licensing' );
+add_action( 'shoestrap_admin_content', 'shoestrap_edd_licensing', 11 );
 function shoestrap_edd_licensing() {
   $license  = get_option( 'shoestrap_edd_license_key' );
   $status   = get_option( 'shoestrap_edd_license_status' );
