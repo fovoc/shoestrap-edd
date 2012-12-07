@@ -1,7 +1,14 @@
 <div class="row-fluid product-list">
+<?php
+$per_row = get_theme_mod( 'shoestrap_edd_products_row' );
+if ( $per_row == '1' ) { $spanclass = 'span12'; }
+if ( $per_row == '2' ) { $spanclass = 'span6'; }
+if ( $per_row == '3' ) { $spanclass = 'span4'; }
+if ( $per_row == '4' ) { $spanclass = 'span3'; }
+?>
 <?php if (have_posts()) : $i = 1; ?>
   <?php while (have_posts()) : the_post(); ?>
-    <div class="span4 threecol product<?php if($i % 3 == 0) { echo ' last'; } if($i % 3 == 1) { echo ' first'; } ?>">
+    <div style="margin-right: -2px;" class="<?php echo $spanclass; ?> threecol product<?php if($i % $per_row == 0) { echo ' last'; } if($i % $per_row == 1) { echo ' first'; } ?>">
       <div class="product-image">
         <a href="<?php the_permalink(); ?>">
           <?php the_post_thumbnail( 'bc-product-thumb' ); ?>

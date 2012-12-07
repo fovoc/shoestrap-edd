@@ -18,7 +18,7 @@ function shoestrap_edd_register_controls($wp_customize){
   ));
   
   $wp_customize->add_control( 'shoestrap_edd_frontpage', array(
-    'label'       => __( 'Show description in Product Listings', 'shoestrap_edd' ),
+    'label'       => __( 'Display list of products on the frontpage', 'shoestrap_edd' ),
     'section'     => 'shoestrap_edd',
     'settings'    => 'shoestrap_edd_frontpage',
     'type'        => 'select',
@@ -46,6 +46,20 @@ function shoestrap_edd_register_controls($wp_customize){
     'section'     => 'shoestrap_edd',
     'settings'    => 'posts_per_page',
     'type'        => 'text'
+  ));
+  
+  $wp_customize->add_control( 'shoestrap_edd_products_row', array(
+    'label'       => __( 'Number of products per row', 'shoestrap_edd' ),
+    'section'     => 'shoestrap_edd',
+    'settings'    => 'shoestrap_edd_products_row',
+    'type'        => 'select',
+    'priority'    => 1,
+    'choices'     => array(
+      '1'         => '1',
+      '2'         => '2',
+      '3'         => '3',
+      '4'         => '4',
+    ),
   ));
   
 }
