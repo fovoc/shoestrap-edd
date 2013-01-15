@@ -18,22 +18,9 @@ if ( $shoestrap_enabled->exists() && function_exists( 'edd_get_checkout_uri' ) )
   require_once dirname( __FILE__ ) . '/templates/cart-button.php';            // The Cart button template (for the navbar)
   require_once dirname( __FILE__ ) . '/includes/updater/licencing.php';       // Licencing to provide automatic updates
   require_once dirname( __FILE__ ) . '/includes/admin/activation-errors.php'; // Takes care of any activation error messages
-      
-  // Include the less compiler if not present
-  if (!class_exists('lessc')){
-    require_once dirname( __FILE__) . '/includes/lessphp/lessc.inc.php';
-  }
-  
+
   function shoestrap_enqueue_resources() {
     wp_enqueue_style('shoestrap_styles_edd', plugins_url('assets/css/styles.css', __FILE__), false, null);
   }
   add_action('wp_enqueue_scripts', 'shoestrap_enqueue_resources', 102);
 }
-
-function shoestrap_edd_phpless() {
-  $less = new lessc;
-  // $less->setFormatter( "compressed" );
-
-  $less->checkedCompile( dirname( __FILE__ ) . '/assets/css/styles.less', dirname( __FILE__ ) . '/assets/css/styles.css' );
-}
-add_action( 'wp', 'shoestrap_edd_phpless' );
