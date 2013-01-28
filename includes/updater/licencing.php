@@ -1,6 +1,6 @@
 <?php
 
-define( 'SHOESTRAP_EDD_STORE_URL', 'http://bootstrap-commerce.com/downloads' );
+define( 'SHOESTRAP_EDD_STORE_URL', 'http://shoestrap.org' );
 define( 'SHOESTRAP_EDD_ITEM_NAME', 'Shoestrap EDD Addon' );
 
 if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
