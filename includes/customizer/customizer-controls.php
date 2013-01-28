@@ -62,5 +62,13 @@ function shoestrap_edd_register_controls($wp_customize){
     ),
   ));
   
+  $wp_customize->add_control( $control['setting'], array(
+    'label'       => __( 'Show Cart Button on Navbar', 'shoestrap' ),
+    'section'     => 'shoestrap_edd',
+    'settings'    => 'shoestrap_edd_navbar_cart',
+    'type'        => 'checkbox',
+    'priority'    => 10,
+  ));
+
 }
 add_action( 'customize_register', 'shoestrap_edd_register_controls' );

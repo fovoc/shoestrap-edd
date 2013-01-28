@@ -7,6 +7,7 @@ function shoestrap_edd_register_settings($wp_customize){
   $settings[] = array( 'slug'=> 'shoestrap_edd_show_meta_on_top',   'default' => 'no');
   $settings[] = array( 'slug'=> 'shoestrap_edd_frontpage',          'default' => 'edd_list');
   $settings[] = array( 'slug'=> 'shoestrap_edd_products_row',       'default' => '3');
+  $settings[] = array( 'slug'=> 'shoestrap_edd_navbar_cart',        'default' => '');
 
   foreach($settings as $setting){
     $wp_customize->add_setting( $setting['slug'], array( 'default' => $setting['default'], 'type' => 'theme_mod', 'capability' => 'edit_theme_options' ));
