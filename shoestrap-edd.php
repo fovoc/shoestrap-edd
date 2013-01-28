@@ -3,7 +3,7 @@
 Plugin Name: Shoestrap EDD Addon
 Plugin URI: http://shoestrap.org
 Description: This plugin adds the necessary templates and functions to the shoestrap theme
-Version: 1.23
+Version: 1.25
 Author: Aristeides Stathopoulos
 Author URI: http://aristeides.com
 */
